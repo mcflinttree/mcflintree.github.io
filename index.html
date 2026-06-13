@@ -1,0 +1,390 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BeatFlow Music Streaming</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-950 text-white font-sans min-h-screen">
+  <div class="flex">
+    <!-- Sidebar -->
+    <aside class="w-72 min-h-screen bg-zinc-900 border-r border-zinc-800 p-6 hidden md:flex flex-col">
+      <div>
+        <h1 class="text-3xl font-bold mb-8">BeatFlow</h1><nav class="space-y-3">
+      <button class="w-full text-left px-4 py-3 rounded-2xl bg-white text-black font-medium">
+        Home
+      </button>
+      <button class="w-full text-left px-4 py-3 rounded-2xl hover:bg-zinc-800 transition">
+        Discover
+      </button>
+      <button class="w-full text-left px-4 py-3 rounded-2xl hover:bg-zinc-800 transition">
+        Library
+      </button>
+      <button class="w-full text-left px-4 py-3 rounded-2xl hover:bg-zinc-800 transition">
+        Favorites
+      </button>
+    </nav>
+  </div>
+
+  <div class="mt-10">
+    <h2 class="text-lg font-semibold mb-4">Your Playlists</h2>
+    <div class="space-y-2">
+      <div class="px-4 py-3 rounded-xl bg-zinc-800/60">Top Hits</div>
+      <div class="px-4 py-3 rounded-xl bg-zinc-800/60">Gaming Mix</div>
+      <div class="px-4 py-3 rounded-xl bg-zinc-800/60">Lo-Fi Study</div>
+      <div class="px-4 py-3 rounded-xl bg-zinc-800/60">Night Drive</div>
+    </div>
+  </div>
+
+  <div class="mt-auto pt-6">
+    <div class="bg-gradient-to-r from-purple-600 to-pink-500 rounded-3xl p-5">
+      <h3 class="text-xl font-bold">Upgrade Premium</h3>
+      <p class="text-sm mt-2">Enjoy ad-free music and offline listening.</p>
+      <button class="mt-4 bg-white text-black px-4 py-2 rounded-xl font-semibold">
+        Upgrade
+      </button>
+    </div>
+  </div>
+</aside>
+
+<!-- Main Content -->
+<main class="flex-1 p-6 md:p-10">
+  <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-10">
+    <div>
+      <h2 class="text-4xl font-bold">Welcome Back 🎵</h2>
+      <p class="text-zinc-400 mt-2">Discover trending songs and playlists.</p>
+    </div>
+
+    <div class="flex gap-3 items-center">
+      <input
+        type="text"
+        placeholder="Search music..."
+        class="bg-zinc-900 border border-zinc-800 rounded-2xl px-5 py-3 outline-none w-full md:w-80"
+      />
+      <div class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center font-bold text-lg">
+        M
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Banner -->
+  <section class="bg-gradient-to-r from-purple-700 via-fuchsia-600 to-pink-500 rounded-[32px] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between mb-10">
+    <div class="max-w-xl">
+      <p class="uppercase tracking-[0.3em] text-sm mb-3">Featured Album</p>
+      <h3 class="text-5xl font-extrabold leading-tight">
+        Coming Soon...
+      </h3>
+      <p class="mt-4 text-lg">
+        Update the Latest Version To See Featured Albums!
+      </p>
+
+      <div class="flex gap-4 mt-8">
+        <button class="bg-white text-black px-6 py-3 rounded-2xl font-bold">
+          Play Now
+        </button>
+        <button class="bg-black/20 border border-white/20 px-6 py-3 rounded-2xl font-semibold">
+          Browse Albums
+        </button>
+      </div>
+    </div>
+
+    <img
+      src="images/cat.jpeg"
+      alt="Music"
+      class="w-full md:w-[360px] h-[260px] object-cover rounded-3xl mt-8 md:mt-0"
+    />
+  </section>
+
+  <!-- Songs -->
+  <section>
+    <div class="flex items-center justify-between mb-6">
+      <h3 class="text-2xl font-bold">Trending Songs</h3>
+      <button class="text-purple-400">View All</button>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div class="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden">
+        <img
+          src="images/2face.PNG"
+          class="w-full h-56 object-cover"
+        />
+        <div class="p-5">
+          <div class="flex items-center justify-between">
+            <div>
+              <h4 class="text-xl font-semibold">2face</h4>
+              <p class="text-zinc-400 mt-1">findxstacey,Misfit666</p>
+            </div>
+            <button
+  onclick="playSong(
+    '2face',
+    'findxstacey,Misfit666',
+    'images/2face.PNG',
+    'songs/2face.mp3'
+  )"
+
+  class="bg-purple-600 px-4 py-2 rounded-xl">
+
+  ▶
+
+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden">
+        <img
+          src="images/thepickle.jpg"
+          class="w-full h-56 object-cover"
+        />
+        <div class="p-5">
+          <div class="flex items-center justify-between">
+            <div>
+              <h4 class="text-xl font-semibold">The Pickle</h4>
+              <p class="text-zinc-400 mt-1">mcflintree</p>
+            </div>
+            <button
+  onclick="playSong(
+    'The Pickle',
+    'mcflintree',
+    'images/thepickle.jpg',
+    'songs/The Pickle Complete (1).mp3'
+  )"
+
+  class="bg-purple-600 px-4 py-2 rounded-xl">
+
+  ▶
+
+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden">
+        <img
+          src="images/bangbangyappa.png"
+          class="w-full h-56 object-cover"
+        />
+        <div class="p-5">
+          <div class="flex items-center justify-between">
+            <div>
+              <h4 class="text-xl font-semibold">Bang Bang Bang (minus b remix)</h4>
+              <p class="text-zinc-400 mt-1">lil yappa,BBpanzu</p>
+            </div>
+            <button
+  onclick="playSong(
+    'Bang Bang Bang (minus b remix)',
+    'lil yappa,BBpanzu',
+    'images/bangbangyappa.png',
+    'songs/Bang Bang Bang (lil yappaminus b remix).mp3'
+  )"
+
+  class="bg-purple-600 px-4 py-2 rounded-xl">
+
+  ▶
+
+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- Artist List -->
+<section class="mt-12">
+
+  <div class="flex items-center justify-between mb-6">
+    <h3 class="text-2xl font-bold">
+      Featured Artists
+    </h3>
+  </div>
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+    <!-- Artist 1 -->
+    <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-5 text-center hover:bg-zinc-800 transition">
+
+      <img
+        src="images/cat.jpeg"
+        class="w-24 h-24 rounded-full object-cover mx-auto mb-4"
+      >
+
+      <h4 class="text-lg font-semibold">
+        mcflintree
+      </h4>
+
+      <p class="text-zinc-400 text-sm">
+        1 Songs on Beat Flow
+      </p>
+
+    </div>
+
+    <!-- Artist 2 -->
+    <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-5 text-center hover:bg-zinc-800 transition">
+
+      <img
+        src="images/300px-BBpanzu.jpg"
+        class="w-24 h-24 rounded-full object-cover mx-auto mb-4"
+      >
+
+      <h4 class="text-lg font-semibold">
+        BBpanzu
+      </h4>
+
+      <p class="text-zinc-400 text-sm">
+        1 Songs on Beat Flow
+      </p>
+
+    </div>
+
+    <!-- Artist 3 -->
+    <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-5 text-center hover:bg-zinc-800 transition">
+
+      <img
+        src="images/lil yappa.jfif"
+        class="w-24 h-24 rounded-full object-cover mx-auto mb-4"
+      >
+
+      <h4 class="text-lg font-semibold">
+        lil yappa
+      </h4>
+
+      <p class="text-zinc-400 text-sm">
+        1 Songs on Beat Flow
+      </p>
+
+    </div>
+
+    <!-- Artist 4 -->
+    <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-5 text-center hover:bg-zinc-800 transition">
+
+      <img
+        src="images/artist4.jpg"
+        class="w-24 h-24 rounded-full object-cover mx-auto mb-4"
+      >
+
+      <h4 class="text-lg font-semibold">
+        findxstacey
+      </h4>
+
+      <p class="text-zinc-400 text-sm">
+        1 Songs on Beat Flow
+      </p>
+   
+   
+  </div>
+
+</section>
+ <!-- Bottom Player -->
+<div class="fixed bottom-0 left-0 right-0 bg-zinc-900 border-t border-zinc-800 px-6 py-4 flex items-center justify-between">
+
+  <!-- Song Info -->
+  <div class="flex items-center gap-4">
+
+    <img
+      id="bottomCover"
+      src="images/cat.jpeg"
+      class="w-14 h-14 rounded-2xl object-cover"
+    >
+
+    <div>
+      <h4 id="bottomTitle" class="font-semibold">
+        No Song Playing
+      </h4>
+
+      <p id="bottomArtist" class="text-sm text-zinc-400">
+        BeatFlow Player Service
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Controls -->
+  <div class="flex items-center gap-5">
+
+    <button class="text-xl">⏮</button>
+
+    <!-- Play Button -->
+    <button
+      onclick="toggleSong()"
+      class="w-12 h-12 flex items-center justify-center">
+
+      <img
+        id="playIcon"
+        src="images/play.png"
+        class="w-full h-full object-contain"
+      >
+
+    </button>
+
+    <button class="text-xl">⏭</button>
+
+  </div>
+
+</div>
+
+<!-- Audio -->
+<audio id="audioPlayer"></audio>
+
+<script>
+
+const audioPlayer =
+  document.getElementById("audioPlayer");
+
+const playIcon =
+  document.getElementById("playIcon");
+
+let currentSong = "";
+
+// Play Song Function
+function playSong(title, artist, image, songFile) {
+
+  currentSong = songFile;
+
+  // Change bottom player info
+  document.getElementById("bottomTitle").innerHTML = title;
+  document.getElementById("bottomArtist").innerHTML = artist;
+  document.getElementById("bottomCover").src = image;
+
+  // Change audio source
+  audioPlayer.src = songFile;
+
+  // Play song
+  audioPlayer.play();
+
+  // Change button icon
+  playIcon.src = "images/pause.png";
+
+}
+
+// Toggle Pause/Play
+function toggleSong() {
+
+  if(audioPlayer.paused) {
+
+    audioPlayer.play();
+    playIcon.src = "images/pause.png";
+
+  } else {
+
+    audioPlayer.pause();
+    playIcon.src = "images/play.png";
+
+  }
+
+}
+
+</script>
+
+<audio id="The Pickle">
+  <source src="songs/The Pickle Complete (1).mp3" type="audio/mpeg">
+</audio>
+  <button class="text-xl">⏭</button>
+</div>
+
+  </div>
+</body>
+</html>
+
+<audio controls>
+  <source src="songs/The Pickle Complete (1).mp3" type="audio/mpeg">
+</audio>
